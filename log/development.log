@@ -5164,3 +5164,437 @@ Processing by ReportsController#index as HTML
 Completed 200 OK in 160ms (Views: 1.4ms | ActiveRecord: 2.5ms)
 
 
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started POST "/password" for 192.168.1.10 at 2016-06-03 17:07:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (78.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  
+ActionController::RoutingError (No route matches [POST] "/password"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"email":"utkarsh.dwivedi0393@gmail.com",
+"redirect_url":"http://192.168.1.10:3000",
+}
+Started POST "/password" for 192.168.1.10 at 2016-06-03 17:07:28 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/password"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"email":"utkarsh.dwivedi0393@gmail.com",
+"redirect_url":"http://192.168.1.10:3000",
+}
+Started POST "/password" for 192.168.1.10 at 2016-06-03 17:07:40 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/password"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Started POST "/password" for 192.168.1.10 at 2016-06-03 17:07:55 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/password"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started POST "/auth/password" for 192.168.1.10 at 2016-06-03 17:08:47 +0530
+Processing by DeviseTokenAuth::PasswordsController#create as HTML
+  Parameters: {"email"=>"utkarsh.dwivedi0393@gmail.com", "redirect_url"=>"http://192.168.1.10:3000", "password"=>{"email"=>"utkarsh.dwivedi0393@gmail.com", "redirect_url"=>"http://192.168.1.10:3000"}}
+Unpermitted parameters: redirect_url, password
+Unpermitted parameters: redirect_url, password
+  [1m[36mUser Load (45.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE (BINARY uid = 'utkarsh.dwivedi0393@gmail.com' AND provider='email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'f096de2c672bb7974bf53482ba5fb7be5b351ef5d368b61dc21327582a3f7e4f' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (76.6ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'f096de2c672bb7974bf53482ba5fb7be5b351ef5d368b61dc21327582a3f7e4f', `reset_password_sent_at` = '2016-06-03 11:38:48', `updated_at` = '2016-06-03 11:38:48' WHERE `users`.`id` = 1[0m
+  [1m[35m (86.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/utkarsh/.rvm/gems/ruby-2.3.0@medicare/gems/devise_token_auth-0.1.37/app/views/devise/mailer/reset_password_instructions.html.erb
+  Rendered /home/utkarsh/.rvm/gems/ruby-2.3.0@medicare/gems/devise_token_auth-0.1.37/app/views/devise/mailer/reset_password_instructions.html.erb (26.3ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 123.4ms
+Completed 500 Internal Server Error in 1699ms (ActiveRecord: 265.2ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p><%= t '.request_reset_link_msg' %></p>
+    4: 
+    5: <p><%= link_to t('.password_change_link'), edit_password_url(@resource, reset_password_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url'].to_s).html_safe %></p>
+    6: 
+    7: <p><%= t '.ignore_mail_msg' %></p>
+    8: <p><%= t '.no_changes_msg' %></p>
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/http/url.rb:62:in `full_url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/http/url.rb:52:in `url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:303:in `block in <class:RouteSet>'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:719:in `url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:236:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:177:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:295:in `block (2 levels) in define_url_helper'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/routes_proxy.rb:32:in `edit_user_password_url'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/routes_proxy.rb:35:in `method_missing'
+devise (4.0.3) lib/devise/controllers/url_helpers.rb:51:in `block (4 levels) in generate_helpers!'
+devise_token_auth (0.1.37) app/views/devise/mailer/reset_password_instructions.html.erb:5:in `__home_utkarsh__rvm_gems_ruby_______medicare_gems_devise_token_auth________app_views_devise_mailer_reset_password_instructions_html_erb__1235956833111382181_39857800'
+actionview (5.0.0.rc1) lib/action_view/template.rb:158:in `block in render'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/template.rb:348:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/template.rb:156:in `render'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.0.0.rc1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:103:in `_render_template'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.0.0.rc1) lib/abstract_controller/rendering.rb:26:in `render'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:917:in `block in collect_responses_from_templates'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `each'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `each'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `map'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `collect_responses_from_templates'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:906:in `collect_responses'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:814:in `mail'
+devise (4.0.3) lib/devise/mailers/helpers.rb:16:in `devise_mail'
+devise (4.0.3) app/mailers/devise/mailer.rb:12:in `reset_password_instructions'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:181:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:30:in `process'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:593:in `block in process'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:592:in `process'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:27:in `__getobj__'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:38:in `message'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:89:in `deliver_now'
+devise (4.0.3) lib/devise/models/authenticatable.rb:170:in `send_devise_notification'
+devise_token_auth (0.1.37) app/models/devise_token_auth/concerns/user.rb:92:in `send_reset_password_instructions'
+devise_token_auth (0.1.37) app/controllers/devise_token_auth/passwords_controller.rb:51:in `create'
+actionpack (5.0.0.rc1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:181:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/rescue.rb:31:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.rc1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.rc1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.rc1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+actionview (5.0.0.rc1) lib/action_view/digestor.rb:12:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.0.rc1) lib/rack/etag.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.0.rc1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.0.rc1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+Started POST "/auth/password" for 192.168.1.10 at 2016-06-03 17:09:11 +0530
+Processing by DeviseTokenAuth::PasswordsController#create as HTML
+  Parameters: {"email"=>"utkarsh.dwivedi0393@gmail.com", "redirect_url"=>"http://192.168.1.10:3000", "password"=>{"email"=>"utkarsh.dwivedi0393@gmail.com", "redirect_url"=>"http://192.168.1.10:3000"}}
+Unpermitted parameters: redirect_url, password
+Unpermitted parameters: redirect_url, password
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE (BINARY uid = 'utkarsh.dwivedi0393@gmail.com' AND provider='email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'c499031272852d318517d1ca9e8abb1aee0ee2345ae8f251a24084f8a330e418' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'c499031272852d318517d1ca9e8abb1aee0ee2345ae8f251a24084f8a330e418', `reset_password_sent_at` = '2016-06-03 11:39:11', `updated_at` = '2016-06-03 11:39:11' WHERE `users`.`id` = 1[0m
+  [1m[35m (155.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/utkarsh/.rvm/gems/ruby-2.3.0@medicare/gems/devise_token_auth-0.1.37/app/views/devise/mailer/reset_password_instructions.html.erb
+  Rendered /home/utkarsh/.rvm/gems/ruby-2.3.0@medicare/gems/devise_token_auth-0.1.37/app/views/devise/mailer/reset_password_instructions.html.erb (2.3ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 16.1ms
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 159.2ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p><%= t '.request_reset_link_msg' %></p>
+    4: 
+    5: <p><%= link_to t('.password_change_link'), edit_password_url(@resource, reset_password_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url'].to_s).html_safe %></p>
+    6: 
+    7: <p><%= t '.ignore_mail_msg' %></p>
+    8: <p><%= t '.no_changes_msg' %></p>
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/http/url.rb:62:in `full_url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/http/url.rb:52:in `url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:303:in `block in <class:RouteSet>'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:719:in `url_for'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:236:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:177:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:295:in `block (2 levels) in define_url_helper'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/routes_proxy.rb:32:in `edit_user_password_url'
+devise (4.0.3) lib/devise/controllers/url_helpers.rb:51:in `block (4 levels) in generate_helpers!'
+devise_token_auth (0.1.37) app/views/devise/mailer/reset_password_instructions.html.erb:5:in `__home_utkarsh__rvm_gems_ruby_______medicare_gems_devise_token_auth________app_views_devise_mailer_reset_password_instructions_html_erb__1235956833111382181_21579120'
+actionview (5.0.0.rc1) lib/action_view/template.rb:158:in `block in render'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/template.rb:348:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/template.rb:156:in `render'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.0.0.rc1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.0.0.rc1) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:103:in `_render_template'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.0.0.rc1) lib/abstract_controller/rendering.rb:26:in `render'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:917:in `block in collect_responses_from_templates'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `each'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `each'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `map'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:914:in `collect_responses_from_templates'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:906:in `collect_responses'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:814:in `mail'
+devise (4.0.3) lib/devise/mailers/helpers.rb:16:in `devise_mail'
+devise (4.0.3) app/mailers/devise/mailer.rb:12:in `reset_password_instructions'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:181:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.rc1) lib/action_view/rendering.rb:30:in `process'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:593:in `block in process'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionmailer (5.0.0.rc1) lib/action_mailer/base.rb:592:in `process'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:27:in `__getobj__'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:38:in `message'
+actionmailer (5.0.0.rc1) lib/action_mailer/message_delivery.rb:89:in `deliver_now'
+devise (4.0.3) lib/devise/models/authenticatable.rb:170:in `send_devise_notification'
+devise_token_auth (0.1.37) app/models/devise_token_auth/concerns/user.rb:92:in `send_reset_password_instructions'
+devise_token_auth (0.1.37) app/controllers/devise_token_auth/passwords_controller.rb:51:in `create'
+actionpack (5.0.0.rc1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:181:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/rescue.rb:31:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.rc1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.rc1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.rc1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.rc1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.rc1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.rc1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.rc1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.rc1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+actionview (5.0.0.rc1) lib/action_view/digestor.rb:12:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.0.rc1) lib/rack/etag.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.0.rc1) lib/rack/head.rb:12:in `call'
+activerecord (5.0.0.rc1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.rc1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'

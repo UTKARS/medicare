@@ -72,7 +72,6 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
-    mysql2 (0.4.4)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -80,6 +79,7 @@ GEM
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
     orm_adapter (0.5.0)
+    pg (0.18.4)
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
@@ -146,8 +146,8 @@ DEPENDENCIES
   devise
   devise_token_auth
   listen (~> 3.0.5)
-  mysql2
   omniauth
+  pg
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)
   spring
