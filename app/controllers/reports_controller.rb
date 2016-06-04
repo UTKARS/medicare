@@ -28,6 +28,10 @@ class ReportsController < ApplicationController
 			end
 	end
 
+	def home
+		
+	end
+
 	private
 
 	def reports_params

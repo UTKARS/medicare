@@ -5,5 +5,5 @@ Rails.application.routes.draw do
       resources :reports, only: [:index,:create] do
       end
   	end
-
+  	root to: 'reports#home'
 end
