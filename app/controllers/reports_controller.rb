@@ -2,20 +2,18 @@ class ReportsController < ApplicationController
 	before_action :authenticate_user!, except: [:home]
 
 	#creating reports
-	def create
-		user = User.find(params[:user_id])
-		if user.limit_exceeded?
-			report = user.reports.create(reports_params)
+	def create		
+			report = current_user.reports.build(reports_params)
+		if  report.save
 			render :json => {status: true, data: report}
 		else
-			render :json => {status: false, massage: "Limit is exceeded for the day!"}
+			render :json => {status: false, massage: report.errors}
 		end
 	end
 
 	#fetching reports 
 	def index
-		 user = User.find(params[:user_id])
-		 	all_readings = Report.get_readings(user,params[:type],params[:date])
+		 	all_readings = Report.get_readings(current_user,params[:type],params[:date])
 		 	unless all_readings.blank?
 				arr_bgl = all_readings.map(&:bgl)
 				max_reading = arr_bgl.max

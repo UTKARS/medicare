@@ -1,6 +1,15 @@
 class Report < ApplicationRecord
   belongs_to :user
 
+	#validates :bgl, format: { with: /\A[0-9]{1}\Z/,message: "Must be single integer" }
+  	
+  	validate :on => :create do
+	    if user && user.reports.where("DATE(created_at) = ?", Date.today).length >= 4
+	      errors.add(:reports,"You have exceeded the limit.")
+	    end
+  	end
+
+
     def self.get_readings(user,type,date)
   		 case (type)
 			when "daily_report"
