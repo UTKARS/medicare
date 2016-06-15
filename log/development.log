@@ -7068,3 +7068,465 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports"[0m
+Started POST "/users/1/reports.json" for 192.168.1.32 at 2016-06-07 19:56:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportsController#create as JSON
+  Parameters: {"report"=>{"bgl"=>"aa"}, "user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-07')[0m  [["user_id", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 0], ["user_id", 1], ["created_at", 2016-06-07 14:27:02 UTC], ["updated_at", 2016-06-07 14:27:02 UTC]]
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 226ms (Views: 0.7ms | ActiveRecord: 36.4ms)
+
+
+Started POST "/users/1/reports.json" for 192.168.1.32 at 2016-06-07 20:06:26 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"report"=>{"bgl"=>"11"}, "user_id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (1.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-07')[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-07')[0m  [["user_id", 1]]
+Completed 200 OK in 209ms (Views: 0.7ms | ActiveRecord: 5.2ms)
+
+
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2016-06-11 17:46:32 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (54.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[36mUser Load (42.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'utkarsh.dwivedi0393@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (20.5ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"gAyhFQHIcalZ4j9pUJ3vxg\":{\"token\":\"$2a$10$X7RbPOmCZlAFN3bDgoPjzuKGrbs.lBKR0ndstjK.Aqpt7ZgGbf7xG\",\"expiry\":1466511063},\"3cN6yQSEInhaF6WEOIe5Yw\":{\"token\":\"$2a$10$HtkNwAwVdoMmxt5L9D2TE.cu7i6zdbG/08Ujo1VA.ZeN7DjYH7bSW\",\"expiry\":1466511151},\"71dE6QfJwYaXfB62SOY2Og\":{\"token\":\"$2a$10$D.cBqt70lhS5yjT6D1Nz0ukVlrfVoe8P.0HzYM/7jhcRrkU3MeiJS\",\"expiry\":1466856993}}"], ["updated_at", 2016-06-11 12:16:33 UTC], ["id", 1]]
+  [1m[35m (76.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "current_sign_in_ip" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 2], ["current_sign_in_at", 2016-06-11 12:16:33 UTC], ["current_sign_in_ip", "127.0.0.1"], ["updated_at", 2016-06-11 12:16:33 UTC], ["id", 1]]
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 532ms (Views: 0.4ms | ActiveRecord: 223.5ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:48:15 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (97.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+  [1m[35mSQL (19.5ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-11 12:18:15 UTC], ["updated_at", 2016-06-11 12:18:15 UTC]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 299ms (Views: 1.1ms | ActiveRecord: 135.7ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:48:21 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.9ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-11 12:18:21 UTC], ["updated_at", 2016-06-11 12:18:21 UTC]]
+  [1m[35m (75.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 92ms (Views: 0.7ms | ActiveRecord: 78.2ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:48:23 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (1.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-11 12:18:23 UTC], ["updated_at", 2016-06-11 12:18:23 UTC]]
+  [1m[35m (51.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 70ms (Views: 0.9ms | ActiveRecord: 55.8ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:48:24 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-11 12:18:24 UTC], ["updated_at", 2016-06-11 12:18:24 UTC]]
+  [1m[35m (63.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 74ms (Views: 0.6ms | ActiveRecord: 65.1ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:48:26 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (1.0ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (1.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-11')[0m  [["user_id", 1]]
+Completed 200 OK in 62ms (Views: 0.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:49:31 +0530
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/report.rb:11:in `<class:Report>'
+app/models/report.rb:1:in `<top (required)>'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:53:06 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 8.6ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<MyValidator:0x00000004abfeb0 @options={}>):
+  
+app/models/my_validator.rb:3:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:55:02 +0530
+  
+NameError (undefined local variable or method `user' for #<Class:0x00000004c625b0>):
+  
+app/models/report.rb:11:in `<class:Report>'
+app/models/report.rb:1:in `<top (required)>'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:55:38 +0530
+  
+NameError (undefined local variable or method `user' for #<Class:0x0000000564bec8>):
+  
+app/models/report.rb:12:in `<class:Report>'
+app/models/report.rb:1:in `<top (required)>'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 17:57:52 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<MyValidator:0x00000004c25368 @options={}>):
+  
+app/models/my_validator.rb:3:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:00:44 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<MyValidator:0x00000004ee65c0 @options={}>):
+  
+app/models/my_validator.rb:3:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:02:17 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `starts_with?' for 2:Fixnum):
+  
+app/models/my_validator.rb:3:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:02:50 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.6ms)
+
+
+  
+NameError (undefined local variable or method `logger' for #<MyValidator:0x00000005226758 @options={}>):
+  
+app/models/my_validator.rb:3:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:03:13 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `logger' for #<MyValidator:0x000000052f35f0 @options={}>):
+  
+app/models/my_validator.rb:4:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:03:35 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `logger' for #<MyValidator:0x0000000522ea70 @options={}>):
+  
+app/models/my_validator.rb:4:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:06:03 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 1.5ms)
+
+
+  
+NameError (undefined local variable or method `errors' for #<MyValidator:0x00000004e110c8 @options={}>):
+  
+app/models/my_validator.rb:4:in `validate'
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:06:29 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+Completed 200 OK in 193ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:10:25 +0530
+  
+NameError (uninitialized constant Report::MyValidator):
+  
+app/models/report.rb:5:in `<class:Report>'
+app/models/report.rb:1:in `<top (required)>'
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:11:02 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 1.8ms)
+
+
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reports" WHERE "reports"."id" = $1[0m  [["id", 1]]
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reports" WHERE "reports"."id" = $1[0m  [["id", 2]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reports" WHERE "reports"."id" = $1[0m  [["id", 3]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reports" WHERE "reports"."id" = $1[0m  [["id", 4]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reports" WHERE "reports"."id" = $1[0m  [["id", 5]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2016-06-11 18:12:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'utkarsh.dwivedi0393@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"gAyhFQHIcalZ4j9pUJ3vxg\":{\"token\":\"$2a$10$X7RbPOmCZlAFN3bDgoPjzuKGrbs.lBKR0ndstjK.Aqpt7ZgGbf7xG\",\"expiry\":1466511063},\"3cN6yQSEInhaF6WEOIe5Yw\":{\"token\":\"$2a$10$HtkNwAwVdoMmxt5L9D2TE.cu7i6zdbG/08Ujo1VA.ZeN7DjYH7bSW\",\"expiry\":1466511151},\"71dE6QfJwYaXfB62SOY2Og\":{\"token\":\"$2a$10$D.cBqt70lhS5yjT6D1Nz0ukVlrfVoe8P.0HzYM/7jhcRrkU3MeiJS\",\"expiry\":1466856993},\"RDnacYrSFc9qZK1KvsnURA\":{\"token\":\"$2a$10$pnrI9xl7EBBfdFm5M3Z8P.k2YE5A2L33OThnWaQu81YxLzQuIgt6e\",\"expiry\":1466858570}}"], ["updated_at", 2016-06-11 12:42:50 UTC], ["id", 1]]
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["sign_in_count", 3], ["current_sign_in_at", 2016-06-11 12:42:50 UTC], ["last_sign_in_at", 2016-06-11 12:16:33 UTC], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2016-06-11 12:42:50 UTC], ["id", 1]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 346ms (Views: 1.4ms | ActiveRecord: 44.2ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:12:59 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 2], ["user_id", 1], ["created_at", 2016-06-11 12:42:59 UTC], ["updated_at", 2016-06-11 12:42:59 UTC]]
+  [1m[35m (23.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 199ms (Views: 2.1ms | ActiveRecord: 29.5ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:13:10 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 2], ["user_id", 1], ["created_at", 2016-06-11 12:43:10 UTC], ["updated_at", 2016-06-11 12:43:10 UTC]]
+  [1m[35m (85.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 99ms (Views: 0.6ms | ActiveRecord: 87.7ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:13:13 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 2], ["user_id", 1], ["created_at", 2016-06-11 12:43:13 UTC], ["updated_at", 2016-06-11 12:43:13 UTC]]
+  [1m[35m (54.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 67ms (Views: 0.8ms | ActiveRecord: 58.1ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:13:14 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 2], ["user_id", 1], ["created_at", 2016-06-11 12:43:14 UTC], ["updated_at", 2016-06-11 12:43:14 UTC]]
+  [1m[35m (60.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 71ms (Views: 1.1ms | ActiveRecord: 62.7ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-11 18:13:15 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>2, "user_id"=>"1", "report"=>{"bgl"=>2}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-11' and user_id = 1)[0m
+Completed 200 OK in 52ms (Views: 1.5ms | ActiveRecord: 2.7ms)
+
+
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:23:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (31.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 39ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:23:49 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:23:51 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:24:01 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:24:16 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:48:58 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:49:01 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:50:29 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:50:56 +0530
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/workspace/medicare/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2016-06-14 10:51:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportsController#home as HTML
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms)
+
+

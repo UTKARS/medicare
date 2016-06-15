@@ -13,7 +13,7 @@ class ReportsController < ApplicationController
 
 	#fetching reports 
 	def index
-		 	all_readings = Report.get_readings(current_user,params[:type],params[:date])
+		 	all_readings = current_user.get_readings(params[:type],params[:date])
 		 	unless all_readings.blank?
 				arr_bgl = all_readings.map(&:bgl)
 				max_reading = arr_bgl.max
@@ -26,6 +26,7 @@ class ReportsController < ApplicationController
 			end
 	end
 
+	#https://github.com/rails/rails/issues/24505 - reason
 	def home
 		
 	end
