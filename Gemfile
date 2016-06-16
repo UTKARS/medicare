@@ -39,3 +39,4 @@ gem 'devise_token_auth'#, github:"lynndylanhurley/devise_token_auth", branch: "m
 gem 'omniauth' # required for devise_token_auth
 
 gem 'rails_12factor', group: :production
+gem 'mina'
