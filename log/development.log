@@ -7530,3 +7530,158 @@ Processing by ReportsController#home as HTML
 Completed 204 No Content in 3ms (ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+ (called from <top (required)> at /home/utkarsh/medicare/config/environment.rb:5)
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2016-06-17 11:30:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (36.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"utkarsh.dwivedi0393@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[36mUser Load (33.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'utkarsh.dwivedi0393@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameters: format, session
+Unpermitted parameters: format, session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"gAyhFQHIcalZ4j9pUJ3vxg\":{\"token\":\"$2a$10$X7RbPOmCZlAFN3bDgoPjzuKGrbs.lBKR0ndstjK.Aqpt7ZgGbf7xG\",\"expiry\":1466511063},\"3cN6yQSEInhaF6WEOIe5Yw\":{\"token\":\"$2a$10$HtkNwAwVdoMmxt5L9D2TE.cu7i6zdbG/08Ujo1VA.ZeN7DjYH7bSW\",\"expiry\":1466511151},\"71dE6QfJwYaXfB62SOY2Og\":{\"token\":\"$2a$10$D.cBqt70lhS5yjT6D1Nz0ukVlrfVoe8P.0HzYM/7jhcRrkU3MeiJS\",\"expiry\":1466856993},\"RDnacYrSFc9qZK1KvsnURA\":{\"token\":\"$2a$10$pnrI9xl7EBBfdFm5M3Z8P.k2YE5A2L33OThnWaQu81YxLzQuIgt6e\",\"expiry\":1466858570},\"TfmN6KbJBw2eBPANDWz-1Q\":{\"token\":\"$2a$10$tYWoEtyTLlKFRrcO71MTtuIpywoIWYJiv1UPv8G0KH4itPcyQKRiy\",\"expiry\":1467352812}}"], ["updated_at", 2016-06-17 06:00:12 UTC], ["id", 1]]
+  [1m[35m (86.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 4], ["current_sign_in_at", 2016-06-17 06:00:12 UTC], ["last_sign_in_at", 2016-06-11 12:42:50 UTC], ["updated_at", 2016-06-17 06:00:12 UTC], ["id", 1]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 530ms (Views: 0.6ms | ActiveRecord: 198.3ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:09 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (11.0ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-17 06:02:09 UTC], ["updated_at", 2016-06-17 06:02:09 UTC]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 242ms (Views: 0.6ms | ActiveRecord: 50.4ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:12 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-17 06:02:12 UTC], ["updated_at", 2016-06-17 06:02:12 UTC]]
+  [1m[35m (67.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 83ms (Views: 0.7ms | ActiveRecord: 70.0ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:14 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-17 06:02:14 UTC], ["updated_at", 2016-06-17 06:02:14 UTC]]
+  [1m[35m (102.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 112ms (Views: 0.6ms | ActiveRecord: 104.5ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:15 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "reports" ("bgl", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bgl", 1], ["user_id", 1], ["created_at", 2016-06-17 06:02:15 UTC], ["updated_at", 2016-06-17 06:02:15 UTC]]
+  [1m[35m (83.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 95ms (Views: 1.0ms | ActiveRecord: 85.6ms)
+
+
+Started POST "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:16 +0530
+Processing by ReportsController#create as JSON
+  Parameters: {"bgl"=>1, "user_id"=>"1", "report"=>{"bgl"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Load (1.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE (DATE(created_at) = '2016-06-17' and user_id = 1)[0m
+Completed 200 OK in 258ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:32:46 +0530
+Processing by ReportsController#index as JSON
+  Parameters: {"user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) = '2016-06-17')[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `all_readings' for #<ReportsController:0x000000046058c0>
+Did you mean?  @all_readings
+               avg_reading):
+  
+app/controllers/reports_controller.rb:18:in `index'
+Started GET "/users/1/reports.json" for 127.0.0.1 at 2016-06-17 11:33:14 +0530
+Processing by ReportsController#index as JSON
+  Parameters: {"user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-03" for 127.0.0.1 at 2016-06-17 11:34:02 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-03", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-03" for 127.0.0.1 at 2016-06-17 11:34:16 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-03", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-03" for 127.0.0.1 at 2016-06-17 11:35:12 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-03", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-017" for 127.0.0.1 at 2016-06-17 11:35:23 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-017", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ArgumentError (invalid date):
+  
+app/models/user.rb:24:in `get_readings'
+app/controllers/reports_controller.rb:16:in `index'
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-17" for 127.0.0.1 at 2016-06-17 11:35:35 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-17", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/reports?type=month_to_date_report&date=2016-06-17" for 127.0.0.1 at 2016-06-17 11:35:54 +0530
+Processing by ReportsController#index as HTML
+  Parameters: {"type"=>"month_to_date_report", "date"=>"2016-06-17", "user_id"=>"1", "report"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "utkarsh.dwivedi0393@gmail.com"], ["LIMIT", 1]]
+  [1m[36mReport Load (0.9ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = $1 AND (DATE(created_at) >= '2016-06-01' and DATE(created_at) <= '2016-06-17')[0m  [["user_id", 1]]
+Completed 200 OK in 158ms (Views: 2.3ms | ActiveRecord: 5.7ms)
+
+
